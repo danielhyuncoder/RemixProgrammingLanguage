@@ -1,0 +1,61 @@
+Key:
+  [VARRIABLE_NAME_ACCESS] = $[VARRIABLE_NAME]
+  [VARRIABLE_NAME] = Name of the varriable.
+  [VARRIABLE_VALUE] = Value of the varriable. This includes strings and numbers.
+  [MESSAGE] = Message of the statement.
+  [VARRIABLE_SET_NAME] = Name of the varriable that will be set in an expression.
+  [OPERATOR] = A mathmatical operator (*, +, -, /).
+  [NUMBER] = A float or integer value.
+  [CONDITIONAL_OPERATOR] = A conditional operator used in if statements. (!= or ==)
+  [VALUE] = a value (etheir a string or a number).
+  [LINE_COUNT] = the number of lines under a statement that the compilier counts (When compiled).
+  [FUNCTION_NAME] = A function name.
+  [REPEAT_COUNT] = The number of times a repeat statement would loop.
+  
+
+Output/Input functions:
+  *log [MESSAGE] OR [VARRIABLE_NAME_ACCESS] - Displays a message on the console. Example: log $x or log Hello
+  *input [VARRIABLE_NAME_ACCESS] - Sets response to the varriable mentioned. Example: input $x
+Varriables:
+  *var [VARRIABLE_NAME] = [VARRIABLE_VALUE] - Creates/assigns the [VARRIABLE_NAME] to the [VARRIABLE_VALUE]. Example: var x = 10 or var x = Hello
+  *$[VARRIABLE_NAME] - Main way of accessing a varriable. Example: log $x or input $x
+String/Math functions:
+  *lower [VARRIABLE_NAME] - Lowercases the string value of the corresponding [VARRIABLE_VALUE] of the [VARRIABLE_NAME]. Otherwise, it returns an error. Example: lower x
+  *upper [VARRIABLE_NAME] - Uppercases the string value of the corresponding [VARRIABLE_VALUE] of the [VARRIABLE_NAME]. Otherwise, it returns an error. Example: upper x
+  *math [VARRIABLE_SET_NAME] [OPERATOR] [VARRIABLE_NAME] or [NUMBER]. Example: math $x * 10 (Result is that [X] will be multiplied by 10). math $x * $y (Result is that [X] will be multiplied by [Y]).
+String Syntax:
+  *Strings are declared like normal, with the exception that every space corresponds to a [_].
+    - I_am_CPB
+  *When strings are outputed or used, they will be shown as normal.
+    - I am CPB
+Syntax Rules:
+  *ALWAYS add spaces when shown in the documentation.
+IF statements:
+  *if [VARRIABLE_NAME] or [VALUE] [CONDITIONAL_OPERATOR] [VARRIABLE_NAME] or [VALUE] [LINE_COUNT].
+  *(==) - is equal to.
+  *(!=) - not equal to.
+  *Example 1:
+   * if [X] == [Y] 1
+     -log $x
+   * if [X] does equal to [Y], then the compiler would run 1 line below the if statement.
+   * The values could be also strings or numbers.
+   * if [X] does not equal to [Y], then the compilier would ignore the entire statement.
+FUNCTION statements:
+  *function [FUNCTION_NAME] [LINE_COUNT].
+   *The [FUNCTION_NAME] specified will be used to utilize this function.
+   *The [LINE_COUNT] represents how long the function is.
+  *call [FUNCTION_NAME] - runs the function based from it's [LINE_COUNT]
+  *Example 1:
+    *function say_hi 1
+     -log hi
+     call say_hi
+     (Returns: hi)
+    *The compiler ran 1 line under the function.
+    *The function does not run until called.
+Statement syntax:
+  *(-) - used to signify to the compiler to not run the line on default, but only in the statement.
+Comments:
+  *(-) - when not used in a statement, it could also be utilized as a comment as well.
+Loop Statements:
+  *repeat []
+   
